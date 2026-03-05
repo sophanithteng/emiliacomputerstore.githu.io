@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASUS PROART P16 OLRD H7606WI-ME059W3</title>
+
+  <link rel="stylesheet" href="../assets/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+    body { background:#0f1215; color:#e6e6e6; }
+    .page { max-width:1200px; margin:auto; padding:24px; }
+    .card-like { background:#151a20; border:1px solid #222a33; border-radius:12px; box-shadow:0 6px 24px rgba(0,0,0,.35); }
+    .title { font-weight:700; letter-spacing:.2px; }
+    .price { color:#ff3b5c; font-size:2rem; font-weight:800; }
+    .old-price { color:#9aa4af; text-decoration:line-through; margin-left:.5rem; }
+    .badge-stock { background:#1ecb7d; color:#0a1a12; font-weight:700; }
+    .specs li, .freebies li { margin-bottom:.4rem; }
+    .hero-img { width:100%; border-radius:12px; background:#0a0d11; }
+    .thumb { cursor:pointer; border:2px solid transparent; border-radius:8px; background:#0a0d11; transition:border-color .2s, transform .1s; }
+    .thumb.active, .thumb:hover { border-color:#6ae3ff; transform:translateY(-1px); }
+    .rgb-bar { height:6px; border-radius:6px; background:linear-gradient(90deg,#00f0ff,#6a00ff,#ff006a,#ffb800); filter:drop-shadow(0 0 6px rgba(0,255,255,.4)); }
+    .divider { height:1px; background:#212a34; margin:16px 0; }
+    .btn-primary { background:#6a00ff; border-color:#6a00ff; }
+    .btn-primary:hover { background:#7b1bff; border-color:#7b1bff; }
+    @media (max-width: 991px){ .price { font-size:1.6rem; } }
+    .mcs-footer{background:#0d1116;border-top:1px solid #1b232d}
+.brand-badge{
+  background:#ff3b5c;color:#fff;font-weight:800;letter-spacing:.5px;
+  border-radius:10px;padding:.45rem .6rem;font-size:.9rem;box-shadow:0 6px 16px rgba(255,59,92,.25)
+}
+.footer-icon{width:36px;height:36px;background:#151a20;border:1px solid #222a33;color:#9ecbff}
+.btn-social{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border-radius:10px;background:#151a20;border:1px solid #222a33;color:#cfe8ff
+}
+.btn-social:hover{color:#0af;border-color:#2c89ff;background:#11161d}
+.back-to-top{
+  width:42px;height:42px;border-radius:12px;background:#19202a;border:1px solid #283241;color:#9ecbff
+}
+.back-to-top:hover{background:#121821;color:#6ae3ff;border-color:#36506e}
+.footer-divider{border-color:#212a34}
+
+  </style>
+</head>
+<body>
+
+  <!-- First Navbar (kept dark) -->
+<nav class="navbar navbar-dark bg-dark shadow-sm p-3">
+  <div class="container">
+
+   <a class="navbar-brand m-0 d-flex align-items-center gap-2" href="../index.html">
+        <div style="flex:0 0 auto;">
+          <img src="../assets/images/logo_store.png" alt="Woman with shopping bags"style="max-width:60px; height:auto; border-radius:6px;">
+        </div>
+        <span class="brand-Emilia">Emilia</span><span class="brand-Computer">Computer Store</span>
+      </a>
+
+    <!-- Center: Search -->
+    <form class="d-flex w-50">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    <!-- Right: Dropdown -->
+    <div class="dropdown">
+      <button class="btn btn-dark dropdown-toggle" type="button" id="accountDropdown"
+              data-bs-toggle="dropdown" aria-expanded="false">
+        My Account
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="#">Orders</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Second Navbar (rounded "circle" look and different color) -->
+<nav class="navbar navbar-expand bg-primary-subtle shadow-sm py-2 my-3">
+  <div class="container">
+    <div class="rounded-pill w-100 px-4 py-2 d-flex align-items-center justify-content-start gap-3 second-nav-pill">
+      <!-- HOME: circular badge -->
+      <a class="text-decoration-none" href="../index.html">
+        <span class="nav-circle d-inline-flex align-items-center justify-content-center text-primary fw-semibold">
+          HOME
+        </span>
+      </a>
+
+
+      <!-- PRODUCT: circular badge with dropdown -->
+      <div class="dropdown">
+        <a href="#" class="text-decoration-none"
+           id="productDropdown"
+           data-bs-toggle="dropdown"
+           aria-expanded="false">
+          <span class="nav-circle d-inline-flex align-items-center justify-content-center text-primary fw-semibold">
+            PRODUCT
+          </span>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="productDropdown">
+          <li><a class="dropdown-item" href="#">All Products</a></li>
+          <li><a class="dropdown-item" href="#">Laptops</a></li>
+          <li><a class="dropdown-item" href="#">Desktops</a></li>
+          <li><a class="dropdown-item" href="#">Accessories</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  <div class="page mt-4">
+    <div class="row g-4">
+      <!-- Left: Gallery -->
+      <div class="col-lg-6">
+        <div class="card-like p-3">
+          <img id="mainImg" class="hero-img" src="../assets/images/rog_zephyhyrus_g16.png" alt="Product main">
+
+          <div class="rgb-bar mt-3"></div>
+
+          <div class="row g-2 mt-3">
+            <div class="col-3">
+              <img class="thumb active w-100" src="../assets/images/rog_zephyhyrus_g16(1).png" alt="thumb 1">
+            </div>
+            <div class="col-3">
+              <img class="thumb active w-100" src="../assets/images/rog_zephyhyrus_g16.png" alt="thumb 1">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Details -->
+      <div class="col-lg-6">
+        <div class="card-like p-4 h-100">
+          <div class="d-flex align-items-center justify-content-between">
+            <h1 class="h4 title mb-0">ROG ZEPHYRUS G16 GU605CM 2025</h1>
+            <span class="badge badge-stock px-3 py-2 rounded-pill">IN STOCK</span>
+          </div>
+          <div class="text-muted small mt-1">posted on 2 months ago</div>
+
+          <div class="d-flex align-items-baseline gap-2 mt-3">
+            <div class="price">$2,099.00</div>
+            <div class="old-price">$2,199.00</div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h2 class="h6 text-uppercase text-info mb-2">Key Specs</h2>
+          <ul class="specs list-unstyled">
+            <li>- CPU : INTTEL CORE ULTRA 9 285H AI BOOST </li>
+            <li>- RAM: 32GB LPDDR5X FASTER</li>
+            <li>- Storage : M.2 1TB NVME PCIE</li>
+            <li>- Display : 16 inch 2.5K QHD+ OLED 240Hz IPS-LEVEL </li>
+            <li>- VGA: NVIDIA GEFORCE RTX 5060 8GB GDDR7</li>
+            <li>- OS Window 11</li>
+            <li>- Laptop is Original Box Company</li>
+            <li>- Original box + 2-year warranty</li>
+          </ul>
+
+          <h3 class="h6 text-uppercase text-info mt-3 mb-2">Free bundle</h3>
+          <ul class="freebies list-unstyled">
+            <li>- ROG Slevebag</li>
+            <li>- ROG gaming mouse + headset</li>
+            <li>- 64GB flash drive, cooling fan, cleaning kit</li>
+            <li>- Mousepad, 20,000mAh powerbank</li>
+            <li>- Screen protector + cleaning kit</li>
+            <li>- Game controller, BT speaker</li>
+            <li>- Software: Windows/programs/games lifetime</li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <div class="d-flex gap-2">
+            <button class="btn btn-primary btn-lg">Order Now</button>
+            <button class="btn btn-outline-light btn-lg">Add to Wishlist</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- ===== Footer ===== -->
+<footer class="mcs-footer pt-5 pb-4 mt-5">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <!-- Brand + Contacts -->
+      <div class="col-lg-6">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <span class="brand-badge">MCS</span>
+          <h2 class="h4 fw-bold mb-0">
+            <span class="text-primary">Emilia</span>Computer Store
+          </h2>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <span class="footer-icon rounded-circle d-inline-flex align-items-center justify-content-center">
+            <i class="bi bi-telephone-fill"></i>
+          </span>
+          <div class="small">
+            Tel: <a class="link-light text-decoration-none" href="tel:085283851">085283851</a> /
+            <a class="link-light text-decoration-none" href="tel:0975595787">0975595787</a>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-start gap-2">
+          <span class="footer-icon rounded-circle d-inline-flex align-items-center justify-content-center mt-1">
+            <i class="bi bi-geo-alt-fill"></i>
+          </span>
+          <div class="small lh-base">
+            ទីតាំងស្ថិតនៅ: អាសយដ្ឋាន ផ្លូវ លំ ផ្ទះលេខ ៦០ សង្កាត់គោកឃ្ឡាំង ភ្នំពេញ Cambodia
+          </div>
+        </div>
+      </div>
+
+      <!-- Social + Back to top -->
+      <div class="col-lg-6">
+        <div class="d-flex flex-lg-row flex-column align-items-lg-end align-items-start gap-3 h-100">
+          <div class="text-muted small">Follow us:</div>
+          <div class="d-flex align-items-center gap-2">
+            <a class="btn-social" href="#" aria-label="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a class="btn-social" href="#" aria-label="Telegram">
+              <i class="bi bi-telegram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="footer-divider my-4">
+
+    <div class="d-flex justify-content-between small text-muted">
+      <span>© 2025 Emilia Computer Store. All rights reserved</span>
+      <span class="opacity-75">v1.0</span>
+    </div>
+  </div>
+</footer>
+
+  
+  <!-- Bootstrap JS -->
+  <script src="../assets/js/bootstrap.js"></script>
+  <script>
+    // Simple image gallery switcher
+    const mainImg = document.getElementById('mainImg');
+    const thumbs = document.querySelectorAll('.thumb');
+
+    thumbs.forEach(t => {
+      t.addEventListener('click', () => {
+        thumbs.forEach(x => x.classList.remove('active'));
+        t.classList.add('active');
+        mainImg.src = t.src.replace(/w=600/, 'w=1600'); // upscale placeholder
+      });
+    });
+  </script>
+</body>
+</html>
