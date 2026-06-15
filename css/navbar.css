@@ -1,0 +1,116 @@
+.navbar {
+  background-color: rgba(13, 17, 23, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  z-index: 1030;
+}
+
+.navbar-logo-wrapper {
+  flex: 0 0 auto;
+}
+
+.navbar-logo {
+  max-width: 50px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.brand-Emilia {
+  font-weight: 800;
+  color: #ff3b5c;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+.brand-Computer {
+  font-weight: 600;
+  color: #94a3b8;
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+}
+
+.navbar .form-control {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px 0 0 8px;
+}
+
+.navbar .form-control:focus {
+  background-color: #0d1117;
+  border-color: #ff3b5c;
+  box-shadow: 0 0 0 2px rgba(255, 59, 92, 0.15);
+  color: #fff;
+}
+
+.search-submit-btn {
+  background: #ff3b5c;
+  border: none;
+}
+
+.search-submit-btn:hover,
+.search-submit-btn:focus {
+  background: #e03250;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: #94a3b8 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fff !important;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.live-clock-container {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clock-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #10b981;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+.account-btn {
+  border-radius: 8px;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.account-menu {
+  background: #161b22;
+}
+
+.account-divider {
+  border-color: rgba(255, 255, 255, 0.05);
+}

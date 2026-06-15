@@ -1,13 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-dark py-2 sticky-top shadow">
   <div class="container">
     <a class="navbar-brand m-0 d-flex align-items-center gap-2" href="/index.html">
-      <div style="flex:0 0 auto;">
-        <img src="/assets/images/logo_store.png" alt="Store Logo"
-          style="max-width:50px; height:auto; border-radius:6px;">
+      <div class="navbar-logo-wrapper">
+        <img src="/assets/images/logo_store.png" alt="Store Logo" class="navbar-logo">
       </div>
       <div class="d-flex flex-column lh-1">
         <span class="brand-Emilia">Emilia</span>
-        <span class="brand-Computer text-uppercase" style="font-size: 0.65rem; letter-spacing: 1.5px;">Computer Store</span>
+        <span class="brand-Computer text-uppercase">Computer Store</span>
       </div>
     </a>
 
@@ -21,7 +20,7 @@
       <form id="searchForm" class="search-wrap flex-grow-1 mx-lg-4 my-3 my-lg-0" role="search">
         <div class="search-input input-group">
           <input id="searchInput" class="form-control" type="search" placeholder="Search for laptops, components..." aria-label="Search">
-          <button class="btn btn-primary px-3" type="submit" style="background: #ff3b5c; border: none;">
+          <button class="btn btn-primary px-3 search-submit-btn" type="submit">
             <i class="bi bi-search"></i>
           </button>
         </div>
@@ -44,15 +43,15 @@
 
       <!-- Account -->
       <div class="dropdown">
-        <button class="btn btn-outline-light btn-sm dropdown-toggle px-3 py-2" type="button" id="accountDropdown"
-          data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 8px; border-color: rgba(255,255,255,0.15);">
+        <button class="btn btn-outline-light btn-sm dropdown-toggle px-3 py-2 account-btn" type="button" id="accountDropdown"
+          data-bs-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-person-circle me-1"></i> My account
         </button>
-        <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2" aria-labelledby="accountDropdown" style="background: #161b22;">
+        <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 account-menu" aria-labelledby="accountDropdown">
           <li><a class="dropdown-item text-white" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
           <li><a class="dropdown-item text-white" href="#"><i class="bi bi-box me-2"></i>Orders</a></li>
           <li><a class="dropdown-item text-white" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
-          <li><hr class="dropdown-divider" style="border-color: rgba(255,255,255,0.05);"></li>
+          <li><hr class="dropdown-divider account-divider"></li>
           <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
         </ul>
       </div>

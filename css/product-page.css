@@ -1,0 +1,32 @@
+body { background:#0f1215; color:#e6e6e6; }
+    .page { max-width:1200px; margin:auto; padding:24px; }
+    .card-like { background:#151a20; border:1px solid #222a33; border-radius:12px; box-shadow:0 6px 24px rgba(0,0,0,.35); }
+    .title { font-weight:700; letter-spacing:.2px; }
+    .price { color:#ff3b5c; font-size:2rem; font-weight:800; }
+    .old-price { color:#9aa4af; text-decoration:line-through; margin-left:.5rem; }
+    .badge-stock { background:#1ecb7d; color:#0a1a12; font-weight:700; }
+    .specs li, .freebies li { margin-bottom:.4rem; }
+    .hero-img { width:100%; border-radius:12px; background:#0a0d11; }
+    .thumb { cursor:pointer; border:2px solid transparent; border-radius:8px; background:#0a0d11; transition:border-color .2s, transform .1s; }
+    .thumb.active, .thumb:hover { border-color:#6ae3ff; transform:translateY(-1px); }
+    .rgb-bar { height:6px; border-radius:6px; background:linear-gradient(90deg,#00f0ff,#6a00ff,#ff006a,#ffb800); filter:drop-shadow(0 0 6px rgba(0,255,255,.4)); }
+    .divider { height:1px; background:#212a34; margin:16px 0; }
+    .btn-primary { background:#6a00ff; border-color:#6a00ff; }
+    .btn-primary:hover { background:#7b1bff; border-color:#7b1bff; }
+    @media (max-width: 991px){ .price { font-size:1.6rem; } }
+    .mcs-footer{background:#0d1116;border-top:1px solid #1b232d}
+.brand-badge{
+  background:#ff3b5c;color:#fff;font-weight:800;letter-spacing:.5px;
+  border-radius:10px;padding:.45rem .6rem;font-size:.9rem;box-shadow:0 6px 16px rgba(255,59,92,.25)
+}
+.footer-icon{width:36px;height:36px;background:#151a20;border:1px solid #222a33;color:#9ecbff}
+.btn-social{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border-radius:10px;background:#151a20;border:1px solid #222a33;color:#cfe8ff
+}
+.btn-social:hover{color:#0af;border-color:#2c89ff;background:#11161d}
+.back-to-top{
+  width:42px;height:42px;border-radius:12px;background:#19202a;border:1px solid #283241;color:#9ecbff
+}
+.back-to-top:hover{background:#121821;color:#6ae3ff;border-color:#36506e}
+.footer-divider{border-color:#212a34}
