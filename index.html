@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emilia Computer Store</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/product.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      background-color: #0b0f14;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* === Premium Custom Scrollbar === */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b0f14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+
+    /* === Header UI Upgrade === */
+    .navbar {
+      background-color: rgba(13, 17, 23, 0.85) !important;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      z-index: 1030;
+    }
+
+    .navbar .form-control {
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 8px 0 0 8px;
+    }
+
+    .navbar .form-control:focus {
+      background-color: #0d1117;
+      border-color: #ff3b5c;
+      box-shadow: 0 0 0 2px rgba(255, 59, 92, 0.15);
+      color: #fff;
+    }
+
+    .brand-Emilia {
+      font-weight: 800;
+      color: #ff3b5c;
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-Computer {
+      font-weight: 600;
+      color: #94a3b8;
+      font-size: 0.75rem;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      color: #94a3b8 !important;
+      padding: 0.5rem 1rem !important;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: #fff !important;
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    /* === Footer Styles === */
+    .mcs-footer { background:#0d1116; border-top:1px solid #1b232d }
+    .brand-badge {
+      background:#ff3b5c; color:#fff; font-weight:800; letter-spacing:.5px;
+      border-radius:10px; padding:.45rem .6rem; font-size:.9rem; box-shadow:0 6px 16px rgba(255,59,92,.25)
+    }
+    .footer-icon { width:36px; height:36px; background:#151a20; border:1px solid #222a33; color:#9ecbff }
+    .btn-social {
+      display:inline-flex; align-items:center; justify-content:center;
+      width:40px; height:40px; border-radius:10px; background:#151a20; border:1px solid #222a33; color:#cfe8ff
+    }
+    .btn-social:hover { color:#0af; border-color:#2c89ff; background:#11161d }
+    .back-to-top { width:42px; height:42px; border-radius:12px; background:#19202a; border:1px solid #283241; color:#9ecbff }
+    .back-to-top:hover { background:#121821; color:#6ae3ff; border-color:#36506e }
+    .footer-divider { border-color:#212a34 }
+
+    /* === Card Mechanics and UI/UX Glow === */
+    .feature-card,
+    .product-card {
+      background: #131922;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      color: #e2e8f0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .animated-card {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      transition: transform .25s cubic-bezier(0.4, 0, 0.2, 1), border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .animated-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 59, 92, 0.3);
+      box-shadow: 0 12px 30px rgba(255, 59, 92, 0.1);
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .feature-title {
+      font-weight: 700;
+      color: #f8fafc;
+      font-size: 0.95rem;
+    }
+
+    .feature-sub {
+      color: #64748b;
+      font-size: .8rem;
+    }
+
+    /* === Interactive Product Styling === */
+    .product-img-wrapper {
+      position: relative;
+      background: #0f141c;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .product-img {
+      max-height: 180px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover .product-img {
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      padding: 1.25rem;
+    }
+
+    .product-card h6 {
+      font-weight: 700;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      height: 42px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: #f1f5f9;
+    }
+
+    .price {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ff3b5c;
+    }
+
+    .old-price {
+      font-size: 0.85rem;
+      color: #64748b;
+      text-decoration: line-through;
+      font-weight: 500;
+      margin-left: 0.5rem;
+    }
+
+    .badge-new {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #ff3b5c;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+
+    .discount-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #10b981;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      z-index: 2;
+    }
+
+    .countdown {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 8px;
+      padding: 0.4rem 0.6rem;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    .order-btn {
+      background: #ff3b5c;
+      border: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.6rem;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .order-btn:hover {
+      background: #e03250;
+    }
+
+    /* === Live Realtime Clock Element === */
+    .live-clock-container {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .clock-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #10b981;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+
+    .top-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1e293b;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      z-index: 99;
+      transition: all 0.2s ease;
+    }
+
+    .top-btn:hover {
+      background: #ff3b5c;
+      border-color: #ff3b5c;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Placeholder for the main navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <div class="container my-4">
+    <div class="row g-4 align-items-stretch">
+
+      <!-- === Features Block === -->
+      <div class="col-12 col-lg-4" id="featuresBlock">
+        <div class="d-flex flex-column gap-3 h-100 justify-content-between">
+          <div class="feature-card animated-card d-flex align-items-center p-3 w-100">
+            <div class="feature-icon"><i class="bi bi-truck text-danger"></i></div>
+            <div class="ms-3">
+              <div class="feature-title">ដឹកជញ្ជូនឥតគិតថ្លៃ</div>
+              <div class="feature-sub">Free delivery</div>
+            </div>
+          </div>
+          <div class="feature-card animated-card d-flex align-items-center p-3 w-100">
+            <div class="feature-icon"><i class="bi bi-cash-coin text-primary"></i></div>
+            <div class="ms-3">
+              <div class="feature-title">ចំនាយស្រាប់បង់ក្រោយទទួល</div>
+              <div class="feature-sub">Cash on delivery</div>
+            </div>
+          </div>
+          <div class="feature-card animated-card d-flex align-items-center p-3 w-100">
+            <div class="feature-icon"><i class="bi bi-shield-check text-warning"></i></div>
+            <div class="ms-3">
+              <div class="feature-title">ការធានាផ្លូវការ</div>
+              <div class="feature-sub">Genuine warranty</div>
+            </div>
+          </div>
+          <div class="feature-card animated-card d-flex align-items-center p-3 w-100">
+            <div class="feature-icon"><i class="bi bi-headset text-danger"></i></div>
+            <div class="ms-3">
+              <div class="feature-title">ប្រឹក្សាផ្នែកបច្ចេកទេស</div>
+              <div class="feature-sub">Tech support</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Right Column: Upcoming Showcase === -->
+      <div class="col-12 col-lg-8" id="upcomingProductsBlock">
+        <h5 class="mb-3 text-light fw-bold d-flex align-items-center gap-2">
+          <i class="bi bi-stars text-warning"></i> Upcoming Products
+        </h5>
+        <div class="row g-3">
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card product-card animated-card h-100 border-0">
+              <div class="product-img-wrapper">
+                <img src="assets/images/asus_pro_art_pa328q32.jpg" class="img-fluid product-img" alt="Product">
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <h6 class="card-title">ASUS ProArt 6k PA32QCV 32</h6>
+                  <p class="card-text text-muted small mt-2" style="font-size: 0.75rem; line-height: 1.5;">
+                    Panel Type: IPS | Resolution: 6016x3384 | 60Hz | 5ms | Brightness: 400 cd/m² | 10-bit color | HDR10
+                  </p>
+                </div>
+                <span class="badge bg-success-subtle text-success-emphasis w-100 py-2 mt-2">Coming soon</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card product-card animated-card h-100 border-0">
+              <div class="product-img-wrapper">
+                <img src="assets/images/asus_pro_art_pa3229crv.jpg" class="img-fluid product-img" alt="Product">
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <h6 class="card-title">ASUS ProArt PA329CRV 32</h6>
+                  <p class="card-text text-muted small mt-2" style="font-size: 0.75rem; line-height: 1.5;">
+                    Size: 32" | 2K (2560x1440) | 75Hz | IPS Flat | sRGB: 100% | Response: 5ms. Premium entry choice monitor ($669).
+                  </p>
+                </div>
+                <span class="badge bg-warning-subtle text-warning-emphasis w-100 py-2 mt-2">Pre-order soon</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card product-card animated-card h-100 border-0">
+              <div class="product-img-wrapper">
+                <img src="assets/images/asus_pro_art_p16.jpg" class="img-fluid product-img" alt="Product">
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <h6 class="card-title">ASUS ProArt PA328Q 32</h6>
+                  <p class="card-text text-muted small mt-2" style="font-size: 0.75rem; line-height: 1.5;">
+                    Size: 32" | 2K IPS | 75Hz | Flat Panel | sRGB: 100% | Response: 5ms | 2x HDMI, 1x DP ($489).
+                  </p>
+                </div>
+                <span class="badge bg-info-subtle text-info-emphasis w-100 py-2 mt-2">Pre-order soon</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Standard Hardware Section -->
+  <div class="container my-5">
+    <div id="noProductsFound" class="alert alert-warning text-center" style="display: none;">
+      No products found matching your search.
+    </div>
+
+    <h5 class="mb-4 text-light fw-bold d-flex align-items-center gap-2">
+      <i class="bi bi-lightning-charge-fill text-danger"></i> Hardware Catalog
+    </h5>
+    <div class="row g-3">
+
+      <!-- Product 1 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card animated-card h-100 d-flex flex-column justify-content-between">
+          <span class="badge-new">NEW</span>
+          <span class="discount-badge" data-new="1599" data-old="1699"></span>
+          <div class="product-img-wrapper">
+            <img src="assets/images/msi_crosshair_16.webp" class="img-fluid product-img" alt="Product">
+          </div>
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h6>MSI CROSSHAIR 16 HXD 2025</h6>
+              <p class="price mt-2">$1,599.00 <span class="old-price">$1,699.00</span></p>
+            </div>
+            <div class="mt-2">
+              <p class="countdown mb-2 text-center" data-end="2026-09-08T13:30:35"><i class="bi bi-clock me-1"></i> Loading...</p>
+              <a href="page/msi_crosshaiar_16.html" class="btn btn-primary w-100 order-btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card animated-card h-100 d-flex flex-column justify-content-between">
+          <span class="badge-new">NEW</span>
+          <span class="discount-badge" data-new="3199" data-old="3299"></span>
+          <div class="product-img-wrapper">
+            <img src="assets/images/rog_zephyhyrus_g14.png" class="img-fluid product-img" alt="Product">
+          </div>
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h6>ROG ZEPHYHYRUS G14 CA403WW 2025</h6>
+              <p class="price mt-2">$3,199.00 <span class="old-price">$3,299.00</span></p>
+            </div>
+            <div class="mt-2">
+              <p class="countdown mb-2 text-center" data-end="2026-09-10T13:30:35"><i class="bi bi-clock me-1"></i> Loading...</p>
+              <a href="page/rog_zephyhyrus_g14.html" class="btn btn-primary w-100 order-btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card animated-card h-100 d-flex flex-column justify-content-between">
+          <span class="badge-new">NEW</span>
+          <span class="discount-badge" data-new="2899" data-old="3099"></span>
+          <div class="product-img-wrapper">
+            <img src="assets/images/rog_strix_scar_18.png" class="img-fluid product-img" alt="Product">
+          </div>
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h6>ROG STRIX SCAR 18 G835LW 2025</h6>
+              <p class="price mt-2">$2,899.00 <span class="old-price">$3,099.00</span></p>
+            </div>
+            <div class="mt-2">
+              <p class="countdown mb-2 text-center" data-end="2026-09-08T13:30:35"><i class="bi bi-clock me-1"></i> Loading...</p>
+              <a href="page/rog_strix_scar_18.html" class="btn btn-primary w-100 order-btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card animated-card h-100 d-flex flex-column justify-content-between">
+          <span class="badge-new">NEW</span>
+          <span class="discount-badge" data-new="2699" data-old="2699"></span>
+          <div class="product-img-wrapper">
+            <img src="assets/images/asus_pro_art_p16.jpg" class="img-fluid product-img" alt="Product">
+          </div>
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h6>ASUS PROART P16 OLRD H7606WI-ME059W3</h6>
+              <p class="price mt-2">$2,699.00</p>
+            </div>
+            <div class="mt-2">
+              <p class="countdown mb-2 text-center" data-end="2026-09-08T13:30:35"><i class="bi bi-clock me-1"></i> Loading...</p>
+              <a href="page/asus_proart.html" class="btn btn-primary w-100 order-btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card animated-card h-100 d-flex flex-column justify-content-between">
+          <span class="badge-new">NEW</span>
+          <span class="discount-badge" data-new="2969" data-old="2969"></span>
+          <div class="product-img-wrapper">
+            <img src="assets/images/dell_ xps_14.png" class="img-fluid product-img" alt="Product">
+          </div>
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h6>Dell XPS 14 Touch LDX-1783</h6>
+              <p class="price mt-2">$2,969.00</p>
+            </div>
+            <div class="mt-2">
+              <p class="countdown mb-2 text-center" data-end="2026-09-08T13:30:35"><i class="bi bi-clock me-1"></i> Loading...</p>
+              <a href="page/dell_xps_14.html" class="btn btn-primary w-100 order-btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card animated-card h-100 d-flex flex-column justify-content-between">
+          <span class="badge-new">NEW</span>
+          <span class="discount-badge" data-new="1449" data-old="1449"></span>
+          <div class="product-img-wrapper">
+            <img src="assets/images/asus_tuf.jpg" class="img-fluid product-img" alt="Product">
+          </div>
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h6>ASUS TUF FX608JPR 2025</h6>
+              <p class="price mt-2">$1,449.00</p>
+            </div>
+            <div class="mt-2">
+              <p class="countdown mb-2 text-center" data-end="2026-09-08T13:30:35"><i class="bi bi-clock me-1"></i> Loading...</p>
+              <a href="page/asus_tuf.html" class="btn btn-primary w-100 order-btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card animated-card h-100 d-flex flex-column justify-content-between">
+          <span class="badge-new">NEW</span>
+          <span class="discount-badge" data-new="1299" data-old="1499"></span>
+          <div class="product-img-wrapper">
+            <img src="assets/images/rog_strix_scar_18.png" class="img-fluid product-img" alt="Product">
+          </div>
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h6>ROG STRIX RTX 5070TI-16GB OC</h6>
+              <p class="price mt-2">$1,299.00 <span class="old-price">$1,499.00</span></p>
+            </div>
+            <div class="mt-2">
+              <p class="countdown mb-2 text-center" data-end="2026-09-08T13:30:35"><i class="bi bi-clock me-1"></i> Loading...</p>
+              <a href="page/rog_strix_scar_18.html" class="btn btn-primary w-100 order-btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card animated-card h-100 d-flex flex-column justify-content-between">
+          <span class="badge-new">NEW</span>
+          <span class="discount-badge" data-new="215" data-old="249"></span>
+          <div class="product-img-wrapper">
+            <img src="assets/images/phanteks_evolve_x2.webp" class="img-fluid product-img" alt="Product">
+          </div>
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h6>Phanteks evolve X2 black</h6>
+              <p class="price mt-2">$215.00 <span class="old-price">$249.00</span></p>
+            </div>
+            <div class="mt-2">
+              <p class="countdown mb-2 text-center" data-end="2026-09-08T13:30:35"><i class="bi bi-clock me-1"></i> Loading...</p>
+              <a href="page/phanteks_evolve_x2.html" class="btn btn-primary w-100 order-btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 9 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card animated-card h-100 d-flex flex-column justify-content-between">
+          <span class="badge-new">NEW</span>
+          <span class="discount-badge" data-new="1999" data-old="2399"></span>
+          <div class="product-img-wrapper">
+            <img src="assets/images/vector_16.jpg" class="img-fluid product-img" alt="Product">
+          </div>
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h6>Vector 16 HX AI A2WXHG</h6>
+              <p class="price mt-2">$1,999.00 <span class="old-price">$2,399.00</span></p>
+            </div>
+            <div class="mt-2">
+              <p class="countdown mb-2 text-center" data-end="2026-09-08T13:30:35"><i class="bi bi-clock me-1"></i> Loading...</p>
+              <a href="page/vector_16_hx_ai_a2wxhg.html" class="btn btn-primary w-100 order-btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 10 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card animated-card h-100 d-flex flex-column justify-content-between">
+          <span class="badge-new">NEW</span>
+          <span class="discount-badge" data-new="4299" data-old="5299"></span>
+          <div class="product-img-wrapper">
+            <img src="assets/images/raider_a18.jpg" class="img-fluid product-img" alt="Product">
+          </div>
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h6>Raider A18 HX A9WJG 2025</h6>
+              <p class="price mt-2">$4,299.99 <span class="old-price">$5,299.99</span></p>
+            </div>
+            <div class="mt-2">
+              <p class="countdown mb-2 text-center" data-end="2026-09-08T13:30:35"><i class="bi bi-clock me-1"></i> Loading...</p>
+              <a href="page/raider_a18.html" class="btn btn-primary w-100 order-btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 11 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card animated-card h-100 d-flex flex-column justify-content-between">
+          <span class="badge-new">NEW</span>
+          <span class="discount-badge" data-new="2669" data-old="2669"></span>
+          <div class="product-img-wrapper">
+            <img src="assets/images/nb_dell_xps_14.png" class="img-fluid product-img" alt="Product">
+          </div>
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h6>NB Dell XPS 14 Touch</h6>
+              <p class="price mt-2">$2,669.00</p>
+            </div>
+            <div class="mt-2">
+              <p class="countdown mb-2 text-center" data-end="2026-09-08T13:30:35"><i class="bi bi-clock me-1"></i> Loading...</p>
+              <a href="page/nb_dell_xps_14.html" class="btn btn-primary w-100 order-btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 12 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card animated-card h-100 d-flex flex-column justify-content-between">
+          <span class="badge-new">NEW</span>
+          <span class="discount-badge" data-new="2099" data-old="2199"></span>
+          <div class="product-img-wrapper">
+            <img src="assets/images/rog_zephyhyrus_g16.png" class="img-fluid product-img" alt="Product">
+          </div>
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h6>ROG ZEPHYRUS G16 GU605CM 2025</h6>
+              <p class="price mt-2">$2,099.00 <span class="old-price">$2,199.00</span></p>
+            </div>
+            <div class="mt-2">
+              <p class="countdown mb-2 text-center" data-end="2026-09-08T13:30:35"><i class="bi bi-clock me-1"></i> Loading...</p>
+              <a href="page/rog_zephyrus_g16_gu605cm_2025.html" class="btn btn-primary w-100 order-btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <!-- Footer structure untouched to ensure your CSS variables don't break -->
+    <div class="footer-inner">
+      <div class="brand">
+        <div class="brand-logo">MCS</div>
+        <div class="brand-name">Emilia<span class="accent">Computer Store</span></div>
+      </div>
+      <div class="contact-list">
+        <div class="item">
+          <div class="icon">📞</div>
+          <div class="text">Tel: 085283851 / 0975595787</div>
+        </div>
+        <div class="item">
+          <div class="icon">📍</div>
+          <div class="text">ទីតាំងស្ថិតនៅ: អាសយដ្ឋាន ផ្លូវ លំ ផ្ទះលេខ ៦០ សង្កាត់គោកឃ្ឡាំង ភ្នំពេញ Cambodia</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="muted">© 2026 Emilia Computer Store. All rights reserved</div>
+        <div class="socials" aria-label="Social media links">
+          <span class="label">Follow us:</span>
+          <a class="social-link fb" href="https://www.facebook.com/yourpage" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H8.4v-2.9h2.04V9.41c0-2.02 1.2-3.13 3.03-3.13.88 0 1.8.16 1.8.16v1.98h-1.02c-1 0-1.31.62-1.31 1.26v1.52h2.23l-.36 2.9h-1.87V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+          </a>
+          <a class="social-link tg" href="https://t.me/+85585283851" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.36 8.9 18.6c.3 0 .43-.13.59-.29l1.42-1.36 2.94 2.16c.54.3.93.14 1.08-.5l1.96-9.2c.2-.93-.33-1.3-.84-1.07L4.9 11.02c-.9.36-.88.88-.15 1.1l3.2.99 7.44-4.7c.35-.22.67-.1.41.12"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="top-btn" aria-label="Back to top" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">⌃</button>
+
+  <script src="assets/js/bootstrap.js"></script>
+  <script>
+    // Fetch and inject the navbar
+    fetch('assets/include/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+
+        // Automatically apply the 'active' class to the Home link
+        const navLinks = document.querySelectorAll('.navbar .nav-link');
+        navLinks.forEach(link => {
+          if (link.dataset.page === 'home') {
+            link.classList.add('active');
+          }
+        });
+
+        // System Realtime Digital Clock Function
+        function updateSystemClock() {
+          const clockEl = document.getElementById('live-sys-clock');
+          if(!clockEl) return;
+          const now = new Date();
+          let hours = now.getHours();
+          const minutes = String(now.getMinutes()).padStart(2, '0');
+          const seconds = String(now.getSeconds()).padStart(2, '0');
+          const ampm = hours >= 12 ? 'PM' : 'AM';
+          hours = hours % 12;
+          hours = hours ? hours : 12; // Formats 0 to 12
+          clockEl.textContent = `${String(hours).padStart(2, '0')}:${minutes}:${seconds} ${ampm}`;
+        }
+        // Call immediately and then every second
+        updateSystemClock();
+        setInterval(updateSystemClock, 1000);
+
+        // --- Search Functionality Implementation ---
+        const searchForm = document.getElementById('searchForm');
+        const searchInput = document.getElementById('searchInput');
+        
+        const featuresBlock = document.getElementById('featuresBlock');
+        const upcomingProductsBlock = document.getElementById('upcomingProductsBlock');
+        const hardwareCatalog = document.querySelector('.container.my-5 > .row.g-3'); // Assuming this is the main product grid
+        const noProductsFoundMessage = document.getElementById('noProductsFound');
+
+        if (searchForm && searchInput) {
+          searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = searchInput.value.toLowerCase().trim();
+            filterProducts(query);
+            if (query) {
+              featuresBlock.style.display = 'none';
+              upcomingProductsBlock.style.display = 'none';
+            } else {
+              featuresBlock.style.display = 'block';
+              upcomingProductsBlock.style.display = 'block';
+            }
+          });
+
+          // Real-time filtering as you type
+          searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            filterProducts(query);
+            featuresBlock.style.display = query ? 'none' : 'block';
+            upcomingProductsBlock.style.display = query ? 'none' : 'block';
+          });
+        }
+        
+        function filterProducts(query) {
+          const productCards = document.querySelectorAll('.product-card');
+          productCards.forEach(card => {
+            const title = card.querySelector('h6').textContent.toLowerCase();
+            // Check if title contains the query
+            if (title.includes(query)) {
+              card.parentElement.style.display = 'block'; // Show the column
+            } else {
+              card.parentElement.style.display = 'none'; // Hide the column
+            }
+          });
+
+          const visibleProducts = Array.from(productCards).filter(card => card.parentElement.style.display !== 'none');
+          if (query && visibleProducts.length === 0) {
+            noProductsFoundMessage.style.display = 'block';
+          } else {
+            noProductsFoundMessage.style.display = 'none';
+          }
+        }
+
+        // Handle search query from URL parameter (for searches from other pages)
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchParam = urlParams.get('search');
+        if (searchParam) {
+          searchInput.value = searchParam;
+          featuresBlock.style.display = 'none';
+          upcomingProductsBlock.style.display = 'none';
+          filterProducts(searchParam.toLowerCase());
+        }
+      })
+      .catch(error => console.error('Error loading navbar:', error));
+
+    // Target Offer Countdown Timers
+    function updateCountdowns() {
+      document.querySelectorAll(".countdown").forEach(el => {
+        let endDate = new Date(el.dataset.end).getTime();
+        let now = new Date().getTime();
+        let diff = endDate - now;
+        if (diff <= 0) {
+          el.innerHTML = `<span class="text-danger fw-bold">Deal ended</span>`;
+          return;
+        }
+        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        el.innerHTML = `<i class="bi bi-clock-history text-danger me-1"></i> ${days}d ${hours}h ${minutes}m ${seconds}s`;
+      });
+    }
+
+    // Smart Percentage Drop Badge Calculations
+    function updateDiscounts() {
+      document.querySelectorAll(".discount-badge").forEach(badge => {
+        let newPrice = parseFloat(badge.dataset.new);
+        let oldPrice = parseFloat(badge.dataset.old);
+        if (!isNaN(newPrice) && !isNaN(oldPrice) && oldPrice > newPrice) {
+          let discountPercent = Math.round(((oldPrice - newPrice) / oldPrice) * 100);
+          badge.textContent = `-${discountPercent}%`;
+        } else {
+          badge.style.display = 'none'; // Hide if no valid discount calculation exists
+        }
+      });
+    }
+
+    setInterval(updateCountdowns, 1000);
+    updateCountdowns();
+    updateDiscounts();
+  </script>
+</body>
+</html>
