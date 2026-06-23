@@ -36,14 +36,12 @@
     clockEl.textContent = `${String(hours).padStart(2, "0")}:${minutes}:${seconds} ${ampm}`;
   }
 
-  function initNavbar() {
-    const navbarPlaceholder = document.getElementById("navbar-placeholder");
+function initNavbar() {
+    const navbarPlaceholder = document.getElementById('navbar-placeholder');
     if (!navbarPlaceholder) return;
 
-    const isSubPage = window.location.pathname.includes("/page/");
-    const navbarPath = isSubPage
-      ? "../assets/include/navbar.html"
-      : "assets/include/navbar.html";
+    const isSubPage = window.location.pathname.includes('/page/');
+    const navbarPath = isSubPage ? '../assets/include/navbar.html' : 'assets/include/navbar.html';
 
     fetch(navbarPath)
       .then((response) => {
@@ -53,34 +51,35 @@
       .then((data) => {
         navbarPlaceholder.innerHTML = data;
 
-        // --- NEW: Automatically fix links to point outside the page folder ---
+        // THIS IS THE FIX:
+        // This targets EVERY link in the navbar. If it goes to index.html, 
+        // we force it to look one folder up (../) if we are in a sub-page.
         if (isSubPage) {
-          document.querySelectorAll("#navbar-placeholder a").forEach((link) => {
-            const href = link.getAttribute("href");
-            // If the link points to index.html, change it to ../index.html
-            if (href === "index.html") {
-              link.setAttribute("href", "../index.html");
+          document.querySelectorAll('#navbar-placeholder a').forEach((link) => {
+            const href = link.getAttribute('href');
+            if (href === 'index.html') {
+              link.setAttribute('href', '../index.html');
             }
           });
         }
-        // ---------------------------------------------------------------------
 
         const activeCategory = getActivePageCategory(window.location.pathname);
-        document.querySelectorAll(".navbar .nav-link").forEach((link) => {
-          link.classList.remove("active");
-
-          const linkHref = link.getAttribute("href") || "";
+        document.querySelectorAll('.navbar .nav-link').forEach((link) => {
+          link.classList.remove('active');
+          const linkHref = link.getAttribute('href') || '';
+          
+          // Check for active class
           if (activeCategory && link.dataset.page === activeCategory) {
-            link.classList.add("active");
+            link.classList.add('active');
           } else if (linkHref && window.location.pathname.endsWith(linkHref)) {
-            link.classList.add("active");
+            link.classList.add('active');
           }
         });
 
         updateSystemClock();
         window.setInterval(updateSystemClock, 1000);
       })
-      .catch((error) => console.error("Error loading navbar:", error));
+      .catch((error) => console.error('Error loading navbar:', error));
   }
 
   function initGallery() {
